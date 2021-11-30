@@ -73,19 +73,17 @@ namespace PanoramicData.OData.Client.Tests.Core
 
 	internal class ODataV4Format : IFormatSettings
 	{
-		public ODataV4Format(bool escapeUri = false)
-		{
-		}
-
 		public int ODataVersion => 4;
 		public string LongNumberSuffix => string.Empty;
 		public string DoubleNumberSuffix => string.Empty;
 		public string DecimalNumberSuffix => string.Empty;
 		public string TimeSpanPrefix => "duration";
 
-		public string GetDateTimeOffsetFormat(string text, bool escapeString = false) => escapeString ? Uri.EscapeDataString(text) : text;
+		public string GetDateTimeOffsetFormat(string text, bool escapeString = false)
+			=> escapeString ? Uri.EscapeDataString(text) : text;
 
-		public string GetGuidFormat(string text, bool escapeString = false) => escapeString ? Uri.EscapeDataString(text) : text;
+		public string GetGuidFormat(string text, bool escapeString = false)
+			=> escapeString ? Uri.EscapeDataString(text) : text;
 
 		public string GetEnumFormat(object value, Type enumType, string ns, bool prefixFree = false, bool escapeString = false)
 		{
