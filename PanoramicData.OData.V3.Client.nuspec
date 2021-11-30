@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
 	<id>PanoramicData.OData.V3.Client</id>
-	<authors>Vagif Abilov</authors>
+	<authors>Vagif Abilov, Panoramic Data Limited and contributors</authors>
 	<version>0.0.0.0</version>
-	<owners>Vagif Abilov</owners>
+	<owners>Panoramic Data Limited</owners>
 	<icon>images/PanoramicData.OData.Client_128x128.png</icon>
 	<description>
 	  PanoramicData.OData.V3.Client is a multiplatform OData client library supporting .NET 4.x, .NET Standard, .NET Core, iOS and Android. The adapter provides a great alternative to WCF Data Services client. It does not require generation of context or entity classes and fits RESTful nature of OData services.
@@ -18,7 +18,7 @@
 	</summary>
 	<projectUrl>https://github.com/object/PanoramicData.OData.Client</projectUrl>
 	<license type="expression">MIT</license>
-	<copyright>Copyright 2012-2021 Vagif Abilov and contributors</copyright>
+	<copyright>Copyright 2012-2021 Vagif Abilov, Panoramic Data Limited and contributors</copyright>
 	<language>en-us</language>
 	<tags>odata data rest client portable pcl netfx net40 net45 netstandard netcore mono adnroid ios</tags>
 	<dependencies>
