@@ -20,7 +20,8 @@ public partial class ODataClient
 	/// </summary>
 	/// <param name="baseUri">The URL base of the OData service.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<object> GetMetadataAsync(Uri baseUri) => GetMetadataAsync(baseUri, null, CancellationToken.None);
+	public static Task<object> GetMetadataAsync(Uri baseUri)
+		=> GetMetadataAsync(baseUri, null, CancellationToken.None);
 
 	/// <summary>
 	/// Retrieves the OData service metadata.
@@ -28,7 +29,8 @@ public partial class ODataClient
 	/// <param name="baseUri">The URL base of the OData service.</param>
 	/// <param name="cancellationToken">The cancellation token.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<object> GetMetadataAsync(Uri baseUri, CancellationToken cancellationToken) => GetMetadataAsync(baseUri, null, cancellationToken);
+	public static Task<object> GetMetadataAsync(Uri baseUri, CancellationToken cancellationToken)
+		=> GetMetadataAsync(baseUri, null, cancellationToken);
 
 	/// <summary>
 	/// Retrieves the OData service metadata.
@@ -36,7 +38,8 @@ public partial class ODataClient
 	/// <param name="baseUri">The URL base of the OData service.</param>
 	/// <param name="credentials">The OData service access credentials.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<object> GetMetadataAsync(Uri baseUri, ICredentials credentials) => GetMetadataAsync(baseUri, credentials, CancellationToken.None);
+	public static Task<object> GetMetadataAsync(Uri baseUri, ICredentials credentials)
+		=> GetMetadataAsync(baseUri, credentials, CancellationToken.None);
 
 	/// <summary>
 	/// Retrieves the OData service metadata.
@@ -45,7 +48,8 @@ public partial class ODataClient
 	/// <param name="credentials">The OData service access credentials.</param>
 	/// <param name="cancellationToken">The cancellation token.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<object> GetMetadataAsync(Uri baseUri, ICredentials credentials, CancellationToken cancellationToken) => GetMetadataAsync<object>(baseUri, credentials, cancellationToken);
+	public static Task<object> GetMetadataAsync(Uri baseUri, ICredentials credentials, CancellationToken cancellationToken)
+		=> GetMetadataAsync<object>(baseUri, credentials, cancellationToken);
 
 	/// <summary>
 	/// Retrieves the OData service metadata.
@@ -62,7 +66,8 @@ public partial class ODataClient
 	/// <param name="baseUri">The URL base of the OData service.</param>
 	/// <param name="cancellationToken">The cancellation token.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<T> GetMetadataAsync<T>(Uri baseUri, CancellationToken cancellationToken) => GetMetadataAsync<T>(baseUri, null, cancellationToken);
+	public static Task<T> GetMetadataAsync<T>(Uri baseUri, CancellationToken cancellationToken)
+		=> GetMetadataAsync<T>(baseUri, null, cancellationToken);
 
 	/// <summary>
 	/// Retrieves the OData service metadata.
@@ -71,7 +76,8 @@ public partial class ODataClient
 	/// <param name="baseUri">The URL base of the OData service.</param>
 	/// <param name="credentials">The OData service access credentials.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<T> GetMetadataAsync<T>(Uri baseUri, ICredentials credentials) => GetMetadataAsync<T>(baseUri, credentials, CancellationToken.None);
+	public static Task<T> GetMetadataAsync<T>(Uri baseUri, ICredentials credentials)
+		=> GetMetadataAsync<T>(baseUri, credentials, CancellationToken.None);
 
 	/// <summary>
 	/// Retrieves the OData service metadata.
@@ -95,7 +101,8 @@ public partial class ODataClient
 	/// </summary>
 	/// <param name="baseUri">The URL base of the OData service.</param>
 	/// <returns>The service metadata.</returns>
-	public static Task<string> GetMetadataDocumentAsync(Uri baseUri) => GetMetadataDocumentAsync(baseUri, null, CancellationToken.None);
+	public static Task<string> GetMetadataDocumentAsync(Uri baseUri)
+		=> GetMetadataDocumentAsync(baseUri, null, CancellationToken.None);
 
 	/// <summary>
 	/// Gets The service metadata as string asynchronous.
@@ -133,17 +140,23 @@ public partial class ODataClient
 		return Session;
 	}
 
-	public async Task<object> GetMetadataAsync() => (await Session.ResolveAdapterAsync(CancellationToken.None).ConfigureAwait(false)).Model;
+	public async Task<object> GetMetadataAsync()
+		=> (await Session.ResolveAdapterAsync(CancellationToken.None).ConfigureAwait(false)).Model;
 
-	public async Task<object> GetMetadataAsync(CancellationToken cancellationToken) => (await Session.ResolveAdapterAsync(cancellationToken).ConfigureAwait(false)).Model;
+	public async Task<object> GetMetadataAsync(CancellationToken cancellationToken)
+		=> (await Session.ResolveAdapterAsync(cancellationToken).ConfigureAwait(false)).Model;
 
-	public async Task<T> GetMetadataAsync<T>() => (T)(await Session.ResolveAdapterAsync(CancellationToken.None).ConfigureAwait(false)).Model;
+	public async Task<T> GetMetadataAsync<T>()
+		=> (T)(await Session.ResolveAdapterAsync(CancellationToken.None).ConfigureAwait(false)).Model;
 
-	public async Task<T> GetMetadataAsync<T>(CancellationToken cancellationToken) => (T)(await Session.ResolveAdapterAsync(cancellationToken).ConfigureAwait(false)).Model;
+	public async Task<T> GetMetadataAsync<T>(CancellationToken cancellationToken)
+		=> (T)(await Session.ResolveAdapterAsync(cancellationToken).ConfigureAwait(false)).Model;
 
-	public Task<string> GetMetadataAsStringAsync() => GetMetadataDocumentAsync(CancellationToken.None);
+	public Task<string> GetMetadataAsStringAsync()
+		=> GetMetadataDocumentAsync(CancellationToken.None);
 
-	public Task<string> GetMetadataDocumentAsync() => GetMetadataDocumentAsync(CancellationToken.None);
+	public Task<string> GetMetadataDocumentAsync()
+		=> GetMetadataDocumentAsync(CancellationToken.None);
 
 	public async Task<string> GetMetadataAsStringAsync(CancellationToken cancellationToken)
 	{
@@ -157,7 +170,8 @@ public partial class ODataClient
 		return Session.MetadataCache.MetadataDocument;
 	}
 
-	public Task<string> GetCommandTextAsync(string collection, ODataExpression expression) => GetCommandTextAsync(collection, expression, CancellationToken.None);
+	public Task<string> GetCommandTextAsync(string collection, ODataExpression expression)
+		=> GetCommandTextAsync(collection, expression, CancellationToken.None);
 
 	public async Task<string> GetCommandTextAsync(string collection, ODataExpression expression, CancellationToken cancellationToken)
 	{
@@ -173,7 +187,8 @@ public partial class ODataClient
 			.GetCommandTextAsync(cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task<string> GetCommandTextAsync<T>(string collection, Expression<Func<T, bool>> expression) => GetCommandTextAsync(collection, expression, CancellationToken.None);
+	public Task<string> GetCommandTextAsync<T>(string collection, Expression<Func<T, bool>> expression)
+		=> GetCommandTextAsync(collection, expression, CancellationToken.None);
 
 	public async Task<string> GetCommandTextAsync<T>(string collection, Expression<Func<T, bool>> expression, CancellationToken cancellationToken)
 	{
@@ -193,23 +208,30 @@ public partial class ODataClient
 
 	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, CancellationToken cancellationToken) => FindEntriesAsync(commandText, false, null, null, cancellationToken);
 
-	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, bool scalarResult) => FindEntriesAsync(commandText, scalarResult, null, null, CancellationToken.None);
+	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, bool scalarResult)
+		=> FindEntriesAsync(commandText, scalarResult, null, null, CancellationToken.None);
 
-	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, bool scalarResult, CancellationToken cancellationToken) => FindEntriesAsync(commandText, scalarResult, null, null, cancellationToken);
+	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, bool scalarResult, CancellationToken cancellationToken)
+		=> FindEntriesAsync(commandText, scalarResult, null, null, cancellationToken);
 
-	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, ODataFeedAnnotations annotations) => FindEntriesAsync(commandText, false, annotations, null, CancellationToken.None);
+	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, ODataFeedAnnotations annotations)
+		=> FindEntriesAsync(commandText, false, annotations, null, CancellationToken.None);
 
-	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, ODataFeedAnnotations annotations, CancellationToken cancellationToken) => FindEntriesAsync(commandText, false, annotations, null, cancellationToken);
+	public Task<IEnumerable<IDictionary<string, object>>> FindEntriesAsync(string commandText, ODataFeedAnnotations annotations, CancellationToken cancellationToken)
+		=> FindEntriesAsync(commandText, false, annotations, null, cancellationToken);
 
 	public Task<IDictionary<string, object>> FindEntryAsync(string commandText) => FindEntryAsync(commandText, null, CancellationToken.None);
 
-	public Task<IDictionary<string, object>> FindEntryAsync(string commandText, CancellationToken cancellationToken) => FindEntryAsync(commandText, null, cancellationToken);
+	public Task<IDictionary<string, object>> FindEntryAsync(string commandText, CancellationToken cancellationToken)
+		=> FindEntryAsync(commandText, null, cancellationToken);
 
 	public Task<object> FindScalarAsync(string commandText) => FindScalarAsync(commandText, null, CancellationToken.None);
 
-	public Task<object> FindScalarAsync(string commandText, CancellationToken cancellationToken) => FindScalarAsync(commandText, null, cancellationToken);
+	public Task<object> FindScalarAsync(string commandText, CancellationToken cancellationToken)
+		=> FindScalarAsync(commandText, null, cancellationToken);
 
-	public Task<IDictionary<string, object>> GetEntryAsync(string collection, params object[] entryKey) => GetEntryAsync(collection, CancellationToken.None, entryKey);
+	public Task<IDictionary<string, object>> GetEntryAsync(string collection, params object[] entryKey)
+		=> GetEntryAsync(collection, CancellationToken.None, entryKey);
 
 	public async Task<IDictionary<string, object>> GetEntryAsync(string collection, CancellationToken cancellationToken, params object[] entryKey)
 	{
@@ -234,7 +256,8 @@ public partial class ODataClient
 		return await GetEntryAsync(collection, entryKeyWithNames, cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task<IDictionary<string, object>> GetEntryAsync(string collection, IDictionary<string, object> entryKey) => GetEntryAsync(collection, entryKey, CancellationToken.None);
+	public Task<IDictionary<string, object>> GetEntryAsync(string collection, IDictionary<string, object> entryKey)
+		=> GetEntryAsync(collection, entryKey, CancellationToken.None);
 
 	public async Task<IDictionary<string, object>> GetEntryAsync(string collection, IDictionary<string, object> entryKey, CancellationToken cancellationToken)
 	{
@@ -259,11 +282,14 @@ public partial class ODataClient
 			x => x.AsEntry(Session.Settings.IncludeAnnotationsInResults), () => null).ConfigureAwait(false);
 	}
 
-	public Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData) => InsertEntryAsync(collection, entryData, true, CancellationToken.None);
+	public Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData)
+		=> InsertEntryAsync(collection, entryData, true, CancellationToken.None);
 
-	public Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData, CancellationToken cancellationToken) => InsertEntryAsync(collection, entryData, true, cancellationToken);
+	public Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData, CancellationToken cancellationToken)
+		=> InsertEntryAsync(collection, entryData, true, cancellationToken);
 
-	public Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData, bool resultRequired) => InsertEntryAsync(collection, entryData, resultRequired, CancellationToken.None);
+	public Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData, bool resultRequired)
+		=> InsertEntryAsync(collection, entryData, resultRequired, CancellationToken.None);
 
 	public async Task<IDictionary<string, object>> InsertEntryAsync(string collection, IDictionary<string, object> entryData, bool resultRequired, CancellationToken cancellationToken)
 	{
@@ -277,11 +303,14 @@ public partial class ODataClient
 		return await InsertEntryAsync(command, resultRequired, cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData) => UpdateEntryAsync(collection, entryKey, entryData, true, CancellationToken.None);
+	public Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData)
+		=> UpdateEntryAsync(collection, entryKey, entryData, true, CancellationToken.None);
 
-	public Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData, CancellationToken cancellationToken) => UpdateEntryAsync(collection, entryKey, entryData, true, cancellationToken);
+	public Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData, CancellationToken cancellationToken)
+		=> UpdateEntryAsync(collection, entryKey, entryData, true, cancellationToken);
 
-	public Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData, bool resultRequired) => UpdateEntryAsync(collection, entryKey, entryData, resultRequired, CancellationToken.None);
+	public Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData, bool resultRequired)
+		=> UpdateEntryAsync(collection, entryKey, entryData, resultRequired, CancellationToken.None);
 
 	public async Task<IDictionary<string, object>> UpdateEntryAsync(string collection, IDictionary<string, object> entryKey, IDictionary<string, object> entryData, bool resultRequired, CancellationToken cancellationToken)
 	{
@@ -297,11 +326,14 @@ public partial class ODataClient
 		return await UpdateEntryAsync(command, resultRequired, cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData) => UpdateEntriesAsync(collection, commandText, entryData, true, CancellationToken.None);
+	public Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData)
+		=> UpdateEntriesAsync(collection, commandText, entryData, true, CancellationToken.None);
 
-	public Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData, CancellationToken cancellationToken) => UpdateEntriesAsync(collection, commandText, entryData, true, cancellationToken);
+	public Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData, CancellationToken cancellationToken)
+		=> UpdateEntriesAsync(collection, commandText, entryData, true, cancellationToken);
 
-	public Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData, bool resultRequired) => UpdateEntriesAsync(collection, commandText, entryData, resultRequired, CancellationToken.None);
+	public Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData, bool resultRequired)
+		=> UpdateEntriesAsync(collection, commandText, entryData, resultRequired, CancellationToken.None);
 
 	public async Task<IEnumerable<IDictionary<string, object>>> UpdateEntriesAsync(string collection, string commandText, IDictionary<string, object> entryData, bool resultRequired, CancellationToken cancellationToken)
 	{
@@ -316,7 +348,8 @@ public partial class ODataClient
 		return await UpdateEntriesAsync(command, resultRequired, cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task DeleteEntryAsync(string collection, IDictionary<string, object> entryKey) => DeleteEntryAsync(collection, entryKey, CancellationToken.None);
+	public Task DeleteEntryAsync(string collection, IDictionary<string, object> entryKey)
+		=> DeleteEntryAsync(collection, entryKey, CancellationToken.None);
 
 	public async Task DeleteEntryAsync(string collection, IDictionary<string, object> entryKey, CancellationToken cancellationToken)
 	{
@@ -357,11 +390,14 @@ public partial class ODataClient
 		await LinkEntryAsync(command, linkName, linkedEntryKey, cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName) => UnlinkEntryAsync(collection, entryKey, linkName, null, CancellationToken.None);
+	public Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName)
+		=> UnlinkEntryAsync(collection, entryKey, linkName, null, CancellationToken.None);
 
-	public Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName, CancellationToken cancellationToken) => UnlinkEntryAsync(collection, entryKey, linkName, null, cancellationToken);
+	public Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName, CancellationToken cancellationToken)
+		=> UnlinkEntryAsync(collection, entryKey, linkName, null, cancellationToken);
 
-	public Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName, IDictionary<string, object> linkedEntryKey) => UnlinkEntryAsync(collection, entryKey, linkName, linkedEntryKey, CancellationToken.None);
+	public Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName, IDictionary<string, object> linkedEntryKey)
+		=> UnlinkEntryAsync(collection, entryKey, linkName, linkedEntryKey, CancellationToken.None);
 
 	public async Task UnlinkEntryAsync(string collection, IDictionary<string, object> entryKey, string linkName, IDictionary<string, object> linkedEntryKey, CancellationToken cancellationToken)
 	{
@@ -412,7 +448,8 @@ public partial class ODataClient
 		return result?.FirstOrDefault();
 	}
 
-	public Task<IEnumerable<IDictionary<string, object>>> ExecuteFunctionAsEnumerableAsync(string functionName, IDictionary<string, object> parameters) => ExecuteFunctionAsEnumerableAsync(functionName, parameters, CancellationToken.None);
+	public Task<IEnumerable<IDictionary<string, object>>> ExecuteFunctionAsEnumerableAsync(string functionName, IDictionary<string, object> parameters)
+		=> ExecuteFunctionAsEnumerableAsync(functionName, parameters, CancellationToken.None);
 
 	public async Task<IEnumerable<IDictionary<string, object>>> ExecuteFunctionAsEnumerableAsync(string functionName, IDictionary<string, object> parameters, CancellationToken cancellationToken)
 	{
@@ -500,7 +537,8 @@ public partial class ODataClient
 		await ExecuteActionAsync(command.Resolve(Session), cancellationToken).ConfigureAwait(false);
 	}
 
-	public Task<IDictionary<string, object>> ExecuteActionAsSingleAsync(string actionName, IDictionary<string, object> parameters) => ExecuteActionAsSingleAsync(actionName, parameters, CancellationToken.None);
+	public Task<IDictionary<string, object>> ExecuteActionAsSingleAsync(string actionName, IDictionary<string, object> parameters)
+		=> ExecuteActionAsSingleAsync(actionName, parameters, CancellationToken.None);
 
 	public async Task<IDictionary<string, object>> ExecuteActionAsSingleAsync(string actionName, IDictionary<string, object> parameters, CancellationToken cancellationToken)
 	{
