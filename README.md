@@ -5,7 +5,7 @@
 
 ## Introduction
 
-PanoramicData.OData.Client is a multiplatform OData client library supporting .NET 4.x, netstandard 2.0, Android and iOS, forking the excellend Simple.OData.Client project. The adapter provides a great alternative to WCF Data Services client. It does not require generation of context or entity classes and fits RESTful nature of OData services.
+PanoramicData.OData.Client is a multiplatform OData client library supporting .NET 4.x, netstandard 2.0, Android and iOS, forking the excellent Simple.OData.Client project. The adapter provides a great alternative to WCF Data Services client. It does not require generation of context or entity classes and fits RESTful nature of OData services.
 
 [Getting started with PanoramicData.OData.Client](https://github.com/object/PanoramicData.OData.Client/wiki/Getting-started-with-PanoramicData.OData.Client)  
 [PanoramicData.OData.Client basic API](https://github.com/object/PanoramicData.OData.Client/wiki/PanoramicData.OData.Client-basic-API)  
