@@ -1,1 +1,1 @@
-dotnet build Simple.OData.Client.sln -c Release
+dotnet build PanoramicData.OData.Client.sln -c Release

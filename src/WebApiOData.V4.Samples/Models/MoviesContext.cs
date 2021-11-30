@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace WebApiOData.V4.Samples.Models
+namespace WebApiOData.V4.Samples.Models;
+
+public class MoviesContext
 {
-    public class MoviesContext
+    private static readonly List<Movie> _movies;
+    static MoviesContext()
     {
-        static List<Movie> _movies;
-        static MoviesContext()
-        {
-            _movies = new List<Movie>()
+        _movies = new List<Movie>()
             {
                 new Movie() { ID=1, Title = "Maximum Payback", Year = 1990 },
                 new Movie() { ID=2, Title = "Inferno of Retribution", Year = 2005 },
@@ -16,8 +16,7 @@ namespace WebApiOData.V4.Samples.Models
                 new Movie() { ID=5, Title = "Beyond Outrage", Year = 2014 },
                 new Movie() { ID=6, Title = "The Nut Job", Year = 2014 }
             };
-        }
-
-        public List<Movie> Movies { get { return _movies; } }
     }
+
+    public List<Movie> Movies => _movies;
 }
