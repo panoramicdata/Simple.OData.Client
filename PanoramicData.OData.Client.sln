@@ -11,13 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		buildAndPack.cmd = buildAndPack.cmd
 		Directory.build.props = Directory.build.props
 		LICENSE = LICENSE
-		NugetPack.cmd = NugetPack.cmd
-		NugetPush.cmd = NugetPush.cmd
-		README.md = README.md
-		RELEASE_NOTES.md = RELEASE_NOTES.md
+		NugetPack.ps1 = NugetPack.ps1
+		NugetPush.ps1 = NugetPush.ps1
 		PanoramicData.OData.Client.nuspec = PanoramicData.OData.Client.nuspec
 		PanoramicData.OData.V3.Client.nuspec = PanoramicData.OData.V3.Client.nuspec
 		PanoramicData.OData.V4.Client.nuspec = PanoramicData.OData.V4.Client.nuspec
+		README.md = README.md
 		sn.snk = sn.snk
 	EndProjectSection
 EndProject
