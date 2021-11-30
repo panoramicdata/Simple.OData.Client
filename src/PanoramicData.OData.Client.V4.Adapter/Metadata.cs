@@ -288,16 +288,6 @@ public class Metadata : MetadataBase
 			.Where(x => x.SchemaElementKind == EdmSchemaElementKind.EntityContainer)
 			.SelectMany(x => (x as IEdmEntityContainer).EntitySets());
 
-	private IEdmEntitySet GetEntitySet(string entitySetName)
-	{
-		if (TryGetEntitySet(entitySetName, out var entitySet))
-		{
-			return entitySet;
-		}
-
-		throw new UnresolvableObjectException(entitySetName, $"Entity set [{entitySetName}] not found");
-	}
-
 	private bool TryGetEntitySet(string entitySetName, out IEdmEntitySet entitySet)
 	{
 		if (entitySetName.Contains("/"))
@@ -316,16 +306,6 @@ public class Metadata : MetadataBase
 	private IEnumerable<IEdmSingleton> GetSingletons() => _model.SchemaElements
 			.Where(x => x.SchemaElementKind == EdmSchemaElementKind.EntityContainer)
 			.SelectMany(x => (x as IEdmEntityContainer).Singletons());
-
-	private IEdmSingleton GetSingleton(string singletonName)
-	{
-		if (TryGetSingleton(singletonName, out var singleton))
-		{
-			return singleton;
-		}
-
-		throw new UnresolvableObjectException(singletonName, $"Singleton [{singletonName}] not found");
-	}
 
 	private bool TryGetSingleton(string singletonName, out IEdmSingleton singleton)
 	{
@@ -457,16 +437,6 @@ public class Metadata : MetadataBase
 			.BestMatch(x => x.Name, typeName, NameMatchResolver);
 
 		return complexType != null;
-	}
-
-	private IEdmEnumType GetEnumType(string typeName)
-	{
-		if (TryGetEnumType(typeName, out var enumType))
-		{
-			return enumType;
-		}
-
-		throw new UnresolvableObjectException(typeName, $"Enum [{typeName}] not found");
 	}
 
 	private bool TryGetEnumType(string typeName, out IEdmEnumType enumType)
